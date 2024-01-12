@@ -73,7 +73,7 @@
   /* Hero */
   .hero {
       margin-top: 50px;
-      margin-bottom: 550px;
+      margin-bottom: 20px;
   }
 
   .hero .container {
@@ -94,6 +94,42 @@
 
   .hero-buttons {
       margin-bottom: 400px;
+  }
+
+  /* Video*/
+  .video {
+      padding: 10px 0 40px;
+  }
+
+  .video-content {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+  }
+
+  .video-preview {
+      margin-bottom: 20px;
+  }
+
+  /* Testimonials */
+  .testimonials {
+      padding: 40px 20px;
+  }
+
+  .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+  }
+
+  .testimonials .card p:nth-child(2) {
+      margin-top: 30px;
+      font-weight: bold;
+  }
+
+  .testimonials .testimonials-heading {
+      width: 700px;
+      margin-bottom: 40px;
   }
 
   /* utility classes */
@@ -181,4 +217,35 @@
 
   .text-center {
       text-align: center;
+  }
+
+  /* Background */
+
+  .bg-primary {
+      background: var(--primary-color);
+      color: #fff;
+  }
+
+  .bg-light {
+      background: var(--light-color);
+      color: #333;
+  }
+
+  .bg-dark {
+      background: var(--dark-color);
+      color: #fff;
+  }
+
+  .bg-black {
+      background: #000;
+      ;
+      color: #fff;
+  }
+
+  /* Card */
+  .card {
+      background: #fff;
+      color: #000;
+      border-radius: 10px;
+      padding: 20px;
   }
