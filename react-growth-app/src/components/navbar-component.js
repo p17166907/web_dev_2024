@@ -1,6 +1,6 @@
 import logo from '../images/logo.png'; // Adjust the path as necessary
 
-export default function Navbar() {
+export function Navbar() {
     return (
         <nav className="navbar">
             <div className="container">

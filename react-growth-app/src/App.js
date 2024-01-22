@@ -1,10 +1,11 @@
-import Navbar from './components/navbar-component';
+import './styles.css';
+import { Navbar } from './components/Navbar-component';
 
 function App() {
   return (
-
-    <Navbar />
-
+    <div className="App">
+      <Navbar />
+    </div>
   );
 }
 
