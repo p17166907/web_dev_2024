@@ -86,12 +86,44 @@ img {
   margin-right: 5px;
 }
 
+/* Video */
+.video {
+  padding: 10px 0 40px;
+}
+
+.video .video-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video .video-preview {
+  margin-bottom: 20px;
+}
+
 /* Text Classes */
 .text-xxl {
   font-size: 3rem;
   line-height: 1.2;
   font-weight: 600;
   margin: 40px 0 20px;
+}
+
+.text-xl {
+  font-size: 2.2rem;
+  line-height: 1.4;
+  font-weight: normal;
+  margin: 40px 0 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Background */
+.bg-black {
+  background: #000;
+  color: #fff;
 }
 
 /* Buttons */
@@ -117,6 +149,12 @@ img {
 /* Utility Classes */
 .container {
   max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.container-sm {
+  max-width: 800px;
   margin: 0 auto;
   padding: 0 15px;
 }
