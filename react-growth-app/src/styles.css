@@ -101,6 +101,54 @@ img {
   margin-bottom: 20px;
 }
 
+
+/* Testimonials */
+.testimonials {
+  padding: 40px 0;
+}
+
+
+.testimonials .testimonials-heading {
+  width: 700px;
+  margin-bottom: 40px;
+}
+
+
+.testimonials .testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* defines the columns of the grid. The repeat(3, 1fr) 
+  function creates three columns (3) of equal width (1fr each). 
+  fr is a fractional unit that allocates available space in the container; */
+  gap: 30px;
+}
+
+.testimonials .card p:nth-child(2) {
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.testimonials .testimonials-grid .card {
+  background-color: #fff;
+  padding: 20px 20px;
+  border: 1px solid #ccc;
+  /* Light grey border */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* Slight shadow for depth */
+  border-radius: 10px;
+  /* Rounded corners */
+  color: #000;
+  margin: 0 10px;
+}
+
+.testimonials .container {
+  width: 90%;
+  /* Increase the percentage as needed */
+  max-width: 1200px;
+  /* Or increase the max-width as needed */
+}
+
+
 /* Text Classes */
 .text-xxl {
   font-size: 3rem;
@@ -123,6 +171,11 @@ img {
 /* Background */
 .bg-black {
   background: #000;
+  color: #fff;
+}
+
+.bg-dark {
+  background: var(--dark-color);
   color: #fff;
 }
 
