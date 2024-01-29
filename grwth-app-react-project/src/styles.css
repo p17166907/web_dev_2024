@@ -215,6 +215,34 @@ img {
   color: #fff;
 }
 
+.faq .faq-group {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.faq .faq-group .faq-group-header {
+  padding: 20px 0;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.faq .faq-group .faq-group-header h4 {
+  font-weight: 600;
+  width: 95%;
+}
+
+.faq .faq-group .faq-group-header i {
+  position: absolute;
+  right: 0;
+  top: 35px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
 /* Card */
 .card {
   background: #fff;
@@ -286,7 +314,7 @@ img {
 }
 
 .container-sm {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 0 15px;
 }
