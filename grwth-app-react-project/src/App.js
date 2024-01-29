@@ -4,6 +4,7 @@ import { Hero } from './components/Hero-component';
 import { Video } from './components/Video-component';
 import { Testimonial } from './components/Testimonial-component';
 import { Pricing } from './components/Pricing-component';
+import { Faq } from './components/Faq-component';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Video />
       <Testimonial />
       <Pricing />
+      <Faq />
     </div>
   );
 }
