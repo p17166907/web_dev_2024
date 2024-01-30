@@ -375,3 +375,105 @@ img {
   margin: 0 auto;
   padding: 0 15px;
 }
+
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+  /* Only shown on mobile */
+  position: relative;
+  z-index: 2;
+  /* Ensures the hamburger is above other content */
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navbar .main-menu {
+    display: none;
+  }
+
+  .hero .container {
+    background-size: cover;
+    /* Use cover to ensure the background covers the area */
+    height: auto;
+    /* Adjust height to be auto to accommodate content */
+    padding: 40px 20px;
+    /* Add some padding */
+    background: url('') no-repeat;
+
+  }
+
+  .hero .hero-content {
+    width: 100%;
+    /* Set width to 100% to use the full width of its container */
+    padding: 0 15px;
+    /* Add padding to not touch the edges */
+  }
+
+  .hero .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    /* Stack buttons in a column */
+    align-items: stretch;
+    /* Stretch button width to the full container width */
+    width: 100%;
+    /* Set width to 100% for full container coverage */
+    margin-top: 20px;
+    /* Add some space above the button group */
+  }
+
+  .hero .hero-buttons .btn {
+    width: 80%;
+    /* Make buttons full width */
+    margin: 10px 0;
+    /* Add margin between buttons */
+  }
+
+  .hero .hero-buttons .btn:first-child {
+    margin-bottom: 10px;
+  }
+
+  .hero .hero-buttons .btn:last-child {
+    margin-top: 10px;
+  }
+
+  /* Testimonials grid adjustments for mobile */
+  .testimonials .testimonials-grid {
+    grid-template-columns: 1fr;
+    /* Stack testimonials in a single column */
+    gap: 20px;
+    /* Adjust gap for vertical spacing */
+  }
+
+  /* Adjust testimonial cards to have margin for smaller screens */
+  .testimonials .testimonials-grid .card {
+    margin: 10px;
+    /* Add margin around each card for spacing */
+  }
+
+  /* Adjust the testimonials heading to fit small screens */
+  .testimonials .testimonials-heading {
+    width: auto;
+    /* Allow the width to auto-adjust */
+    padding: 0 15px;
+    /* Add padding on the sides */
+    margin: 20px 0;
+    /* Adjust margin around the heading */
+    text-align: center;
+    /* Optional: Center the text on small screens */
+  }
+
+  .pricing .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .footer .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
