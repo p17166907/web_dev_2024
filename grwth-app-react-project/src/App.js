@@ -5,6 +5,7 @@ import { Video } from './components/Video-component';
 import { Testimonial } from './components/Testimonial-component';
 import { Pricing } from './components/Pricing-component';
 import { Faq } from './components/Faq-component';
+import { Footer } from './components/Footer-component'
 
 const faqs = [
   {
@@ -29,6 +30,7 @@ function App() {
       <Testimonial />
       <Pricing />
       <Faq faqs={faqs} />
+      <Footer />
     </div>
   );
 }

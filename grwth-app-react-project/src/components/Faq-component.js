@@ -1,4 +1,4 @@
-import { Accordion } from './accordion-component'
+import { Accordion } from './Accordion-component'
 export function Faq({ faqs }) {
     return (
         <section className="faq bg-light">
