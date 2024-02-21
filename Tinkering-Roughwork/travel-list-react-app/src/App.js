@@ -3,6 +3,7 @@ import './index.css';
 import { Logo } from './components/Logo-component'
 import { Form } from './components/Form-component'
 import { PackingList } from './components/PackingList-component';
+import { Stats } from './components/Stats-component'
 
 function App() {
   const [itemsArr, setItemsArr] = useState([])
@@ -22,11 +23,12 @@ function App() {
   function handleToggleItem(id) { setItemsArr((currentItems) => currentItems.map((item) => item.id === id ? { ...item, packed: !item.packed } : item)); }
 
   return (
-    <>
+    <div className='app'>
       <Logo />
       <Form onAddItems={handleAddItems} itemsArr={itemsArr} />
       <PackingList itemsArr={itemsArr} onDelete={handleDeleteItem} setItemsArr={setItemsArr} handleToggleItem={handleToggleItem} />
-    </>
+      <Stats itemsArr={itemsArr} />
+    </div>
   );
 }
 
