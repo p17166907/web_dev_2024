@@ -109,7 +109,7 @@ form {
   align-items: center;
   gap: 1.2rem;
 
-  background-color: var(--color-lightest);
+  background-color: #EEEDEB;
   border-radius: 7px;
 }
 
@@ -148,4 +148,9 @@ input:focus,
 select:focus {
   outline: none;
   border: 1px solid var(--color-dark);
+}
+
+.form-split-bill {
+  grid-template-columns: 1fr 12rem;
+  padding: 4.5rem 4rem;
 }

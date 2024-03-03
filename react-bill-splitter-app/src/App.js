@@ -2,6 +2,7 @@ import { FriendList } from "./components/FriendList-component";
 import { Button } from "./components/Button-component";
 import { FormAddFriend } from "./components/FormAddFriend-component"
 import { useState } from "react";
+import { FormSplitBill } from "./components/FormSplitBill-component";
 
 
 const initialFriends = [
@@ -27,21 +28,26 @@ const initialFriends = [
 
 function App() {
   const [showAddFriend, setShowAddFriend] = useState(false);
+  const [friends, setFriends] = useState(initialFriends); // Using initialFriends
+  const [selectedFriendObj, setSelectedFriendObj] = useState(null)
+
   console.log('App, showAddFriend', showAddFriend);
 
   /**    * Toggles the add friend form display.    */
   const handleShowAddFriend = () => { setShowAddFriend((currentDisplay) => !currentDisplay); };
-
+  /**
+   * Adds a new friend object to the list. @param {Object} newFriendObj - The new friend object to add.
+   */
+  const addFriendObj = (newFriendObj) => { setFriends((currFriendObj) => [...currFriendObj, newFriendObj]) }
 
   return (
     <div className="app">
       <div className="sidebar">
-        <FriendList friendsArr={initialFriends} />
-        {(showAddFriend) && <FormAddFriend />}
+        <FriendList friendsArr={friends} />
+        {(showAddFriend) && <FormAddFriend addFriendObj={addFriendObj} />}
         <Button onClickProp={handleShowAddFriend}> {(showAddFriend) ? 'Close' : 'Add Friend'} </Button>
       </div>
-
-
+      <FormSplitBill />
     </div>
   );
 }
