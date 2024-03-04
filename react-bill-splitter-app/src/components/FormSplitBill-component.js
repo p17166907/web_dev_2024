@@ -1,6 +1,8 @@
 import { Button } from "./Button-component";
 
-
+/**
+ * Form for splitting a bill. @param {{ selectedFriendObj: Object, handleSplitBill: Function }} props - Component props.
+ */
 export function FormSplitBill() {
 
     return (

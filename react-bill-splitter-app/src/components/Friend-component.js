@@ -3,9 +3,12 @@ import { Button } from "./Button-component";
 /**
  * Represents a single friend item. @param {{ friendObj: Object, handleSelection: Function, selectedFriendObj: Object }} props - Component props.
  */
-export function Friend({ friendObj }) {
+export function Friend({ friendObj, handleSelection, selectedFriendObj }) {
     const { name, image, balance } = friendObj;
     console.log('Friend, friendObj', typeof friendObj, friendObj);
+    console.log('Friend, selectedFriendObj', typeof selectedFriendObj, selectedFriendObj);
+
+    const isSelected = selectedFriendObj === friendObj
 
     /**   * Renders the friend's balance status.   */
     const renderBalanceStatus = () => {
@@ -21,6 +24,6 @@ export function Friend({ friendObj }) {
         <img src={image} alt={name} />
         <h3>{name}</h3>
         {renderBalanceStatus()}
-        <Button >Select</Button>
+        <Button onClickProp={() => handleSelection(friendObj)}>{(isSelected) ? ("Close") : ("Select")}</Button>
     </li>)
 }

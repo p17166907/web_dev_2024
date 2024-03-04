@@ -39,11 +39,17 @@ function App() {
    * Adds a new friend object to the list. @param {Object} newFriendObj - The new friend object to add.
    */
   const addFriendObj = (newFriendObj) => { setFriends((currFriendObj) => [...currFriendObj, newFriendObj]) }
-
+  /**
+  * Selects or deselects a friend for bill splitting. @param {Object} friendObj - The friend object to select or deselect.
+  */
+  const handleSelection = (friendObj) => {
+    setSelectedFriendObj((currSelected) => currSelected && currSelected.id === friendObj.id ? null : friendObj);
+    setShowAddFriend(false)
+  }
   return (
     <div className="app">
       <div className="sidebar">
-        <FriendList friendsArr={friends} />
+        <FriendList friendsArr={friends} handleSelection={handleSelection} selectedFriendObj={selectedFriendObj} />
         {(showAddFriend) && <FormAddFriend addFriendObj={addFriendObj} />}
         <Button onClickProp={handleShowAddFriend}> {(showAddFriend) ? 'Close' : 'Add Friend'} </Button>
       </div>
