@@ -4,11 +4,12 @@ import { Button } from "./Button-component";
  * Represents a single friend item. @param {{ friendObj: Object, handleSelection: Function, selectedFriendObj: Object }} props - Component props.
  */
 export function Friend({ friendObj, handleSelection, selectedFriendObj }) {
-    const { name, image, balance } = friendObj;
+    const { id, name, image, balance } = friendObj;
     console.log('Friend, friendObj', typeof friendObj, friendObj);
     console.log('Friend, selectedFriendObj', typeof selectedFriendObj, selectedFriendObj);
 
-    const isSelected = selectedFriendObj === friendObj
+    // Check if the current friendObj's id matches the selectedFriendObj's id
+    const isSelected = selectedFriendObj && selectedFriendObj.id === friendObj.id;
 
     /**   * Renders the friend's balance status.   */
     const renderBalanceStatus = () => {
@@ -20,10 +21,12 @@ export function Friend({ friendObj, handleSelection, selectedFriendObj }) {
 
         return <p className={balanceClassName}>{balanceText}</p>;
     };
-    return (<li >
-        <img src={image} alt={name} />
-        <h3>{name}</h3>
-        {renderBalanceStatus()}
-        <Button onClickProp={() => handleSelection(friendObj)}>{(isSelected) ? ("Close") : ("Select")}</Button>
-    </li>)
+    return (
+        <li className={(isSelected) ? ("selected") : ("")}>
+            <img src={image} alt={name} />
+            <h3>{name}</h3>
+            {renderBalanceStatus()}
+            <Button onClickProp={() => handleSelection(friendObj)}> {(isSelected) ? ("Close") : ("Select")} </Button>
+        </li>
+    )
 }
