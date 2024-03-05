@@ -46,6 +46,16 @@ function App() {
     setSelectedFriendObj((currSelected) => currSelected && currSelected.id === friendObj.id ? null : friendObj);
     setShowAddFriend(false)
   }
+  /**
+  * Handles splitting the bill between the user and selected friend. @param {number} value - The value to adjust the friend's balance by.
+  */
+  const handleSplitBill = (value) => {
+    console.log('App', 'handleSplitBill', value);
+
+    setFriends((friendsObj) => friendsObj.map(friendObj => friendObj.id === selectedFriendObj.id ? { ...friendObj, balance: friendObj.balance + value } : friendObj))
+    setSelectedFriendObj(null)
+  }
+
   return (
     <div className="app">
       <div className="sidebar">
@@ -53,7 +63,9 @@ function App() {
         {(showAddFriend) && <FormAddFriend addFriendObj={addFriendObj} />}
         <Button onClickProp={handleShowAddFriend}> {(showAddFriend) ? 'Close' : 'Add Friend'} </Button>
       </div>
-      <FormSplitBill />
+      {/* if there is a selected friend then display FormSplitBill */}
+      {(selectedFriendObj && <FormSplitBill selectedFriendObj={selectedFriendObj} handleSplitBill={handleSplitBill} />
+      )}
     </div>
   );
 }

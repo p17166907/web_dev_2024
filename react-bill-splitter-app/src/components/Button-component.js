@@ -1,4 +1,3 @@
-
 /**
  * Generic button component.  @param {{ children: React.ReactNode, onClickProp: () => void }} props - The button props.
  */
