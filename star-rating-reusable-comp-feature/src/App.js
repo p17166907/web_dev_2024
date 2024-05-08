@@ -51,6 +51,9 @@ export function StarRating({ maxRating = 5, color = "#fcc419", size = 48, classN
   // Handles mouse enter event on a star, setting the temporary rating.
   const handleOnHoverIn = (i) => setTempRating(i + 1);
 
+  // Resets the temporary rating on mouse leave.
+  const handleOnHoverOut = () => setTempRating(0);
+
   return (
     <>
       <div style={containerStyle}>
@@ -58,6 +61,7 @@ export function StarRating({ maxRating = 5, color = "#fcc419", size = 48, classN
           {Array.from({ length: maxRating }, (_, i) => (
             <Star key={i} color={color} size={size} onRateClick={() => { handleRating(1, i); }}
               full={isFull(rating, tempRating, i)} handleOnHoverIn={() => handleOnHoverIn(i)}
+              handleOnHoverOut={handleOnHoverOut}
 
             />
           )
@@ -94,7 +98,7 @@ export function Star({ onRateClick, full, handleOnHoverIn, handleOnHoverOut, col
   const starStyle = { width: `${size}px`, height: "48px", display: "block", cursor: "pointer" };
 
   return (
-    <span style={starStyle} onClick={onRateClick} onMouseEnter={handleOnHoverIn}>
+    <span style={starStyle} onClick={onRateClick} onMouseEnter={handleOnHoverIn} onMouseLeave={handleOnHoverOut}>
       {/* SVG for full or empty star based on 'full' prop. */}
       {(full) ? (
         // Full star SVG
