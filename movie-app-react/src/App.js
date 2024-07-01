@@ -7,6 +7,7 @@ import { Box } from "./components/Box-component";
 import { Loader } from "./components/Loader-component";
 import { ErrorMessage } from "./components/ErrorMessage-component";
 import { MovieList } from "./components/MovieList-component";
+import { MovieDetails } from "./components/MovieDetails-component";
 
 const tempMovieData = [
   {
@@ -74,6 +75,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [selectedId, setSelectedId] = useState(null)
+  const [watched, setWatched] = useState([]);
+
 
 
   // Effect to fetch movies based on the query
@@ -121,10 +124,10 @@ function App() {
   }, [query]); // Dependency array ensures the effect runs only when `query` changes
 
 
-  const handleSelectMovie = (id) => {
-    setSelectedId((currSelectedId) => (id === currSelectedId ? null : id));
-  }
-  console.log('App, handleSelectMovie()', selectedId);
+  const handleSelectMovie = (id) => { setSelectedId((currSelectedId) => (id === currSelectedId ? null : id)); }
+  if (handleSelectMovie !== null) console.log('App, handleSelectMovie()', selectedId);
+
+  const handleAddWatched = (movie) => { setWatched((watched) => [...watched, movie]) }
 
   return (
     <>
@@ -139,7 +142,13 @@ function App() {
           {!isLoading && !error && <MovieList movies={movies} handleSelectMovie={handleSelectMovie} />}
         </Box>
         <Box>
-          {/* Additional content can be placed here */}
+          {
+            (selectedId) ?
+              (<MovieDetails isLoading={isLoading} KEY={KEY} selectedId={selectedId} setIsLoading={setIsLoading} watched={watched}
+                handleAddWatched={handleAddWatched}
+              />) :
+              'WatchedSummary Component display'
+          }
         </Box>
       </Main>
     </>
